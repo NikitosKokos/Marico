@@ -1,0 +1,321 @@
+.header {
+   position: absolute;
+   width: 100%;
+   top: 0;
+   left: 0;
+   min-height: 100px;
+
+   &__wrapper {
+      position: fixed;
+      padding-top: 45px;
+      padding-bottom: 45px;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 50;
+      transition: all .3s ease-in-out;
+
+      @media (max-width: $md2+px){
+         padding-top: 30px;
+         padding-bottom: 30px;
+      }
+      @media (max-width: $md3+px){
+         padding-top: 20px;
+         padding-bottom: 20px;
+      }
+   }
+
+   &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__logo {
+      flex: 0 0 196px;
+      height: auto;
+
+      img{
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+
+      @media (max-width: 1400px){
+         flex: 0 0 180px;
+      }
+
+      @media (max-width: $md3+px){
+         flex: 0 0 160px;
+      }
+   }
+
+   &__menu {
+      @media (max-width: $md2+px){
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: $blue;
+         opacity: 0;
+         visibility: hidden;
+         transition: all .3s ease-in-out;
+         padding: 60px 0 20px 0;
+         overflow: auto;
+
+         &._active{
+            opacity: 1;
+            visibility: visible;
+         }
+      }
+   }
+
+   &__list {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $md2+px){
+         flex-direction: column;
+      }
+
+      li{
+         position: relative;
+         display: flex;
+         align-items: center;
+         &:not(:last-child){
+           margin: 0px 39px 0px 0px;
+         }
+
+         &.sub{
+            margin: 0px 20px 0px 0px;
+         }
+
+         @media (max-width: $md2+px){
+            flex-wrap: wrap;
+            justify-content: center;
+            &:not(:last-child){
+              margin: 0px 0px 20px 0px;
+            }
+         }
+
+         @media(any-hover: hover){
+            &:hover{
+               .header__sub-list-wrapper{
+                  opacity: 1;
+                  visibility: visible;
+                  pointer-events: initial;
+               }
+               .header__link-arrow{
+                  transform: translateY(2px) rotate(180deg);
+               }
+            }
+         }
+      }
+   }
+
+   &__link {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      color: $gray;
+      display: flex;
+      align-items: center;
+      transition: all .3s ease-in-out;
+
+      &.mouse &-arrow{
+         display: block;
+      }
+
+      &-arrow{
+         display: none;
+         margin: 0px 0px 0px 9px;
+         color: inherit;
+         transition: transform .3s ease-in-out;
+
+         svg{
+            width: 11px;
+            height: 6px;
+            fill: currentColor;
+         }
+      }
+
+      @media (max-width: $md2+px){
+         color: #fff;
+         display: inline-block;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            color: $blue;
+         }
+      }
+   }
+
+   &__arrow {
+      display: none;
+      margin: 0px 0px 0px 9px;
+      color: $gray;
+      transition: all .3s ease-in-out;
+
+      svg{
+         width: 11px;
+         height: 6px;
+         fill: currentColor;
+      }
+
+      &.show{
+         display: block;
+
+         @media (max-width: $md2+px){
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            margin: 0;
+         }
+      }
+
+      &.active{
+         transform: translateY(2px) rotate(180deg);
+
+         @media (max-width: $md2+px){
+            transform: rotate(180deg);
+         }
+      }
+   }
+
+   &__sub-list-wrapper{
+      position: absolute;
+      top: 22px;
+      left: 0;
+      padding: 10px 0px 0px 0px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all .3s ease-in-out;
+
+      @media (min-width: $md2+px){
+         width: 185px;
+      }
+
+      @media (max-width: $md2+px){
+         display: none;
+         position: relative;
+         top: 0;
+         left: 0;
+         flex: 1 1 100%;
+      }
+
+      &.open{
+         opacity: 1;
+         visibility: visible;
+         pointer-events: initial;
+
+         @media (max-width: $md2+px){
+            display: block;
+         }
+      }
+   }
+
+   &__sub-list {
+      background: #131313;
+      border: 1px solid $gray;
+      border-radius: 8px;
+      padding: 13px 22px;
+      display: flex;
+      flex-direction: column;
+
+      li{
+         @media (max-width: $md2+px){
+            &:not(:last-child){
+              margin: 0px 0px 10px 0px;
+            }
+         }
+      }
+
+      @media (max-width: $md2+px){
+         background: transparent;
+         border-color: transparent;
+         padding: 0;
+      }
+   }
+
+   &__sub-link {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      color: #B4B1B1;
+      transition: all .3s ease-in-out;
+      @media (max-width: $md2+px){
+         color: #fff;
+         text-align: center;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            color: #fff;
+         }
+      }
+   }
+
+   &__auth {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $md2+px){
+         flex: 1 1 auto;
+         justify-content: flex-end;
+      }
+   }
+
+   &__login {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      color: $gray;
+      margin: 0px 24px 0px 0px;
+      transition: all .3s ease-in-out;
+
+      @media (max-width: $md4+px){
+         color: #fff;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            color: $blue;
+         }
+      }
+   }
+
+   &__signup {
+      background: $blue;
+      border-radius: 10px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      font-weight: 500;
+      font-size: 20px;
+      color: #fff;
+      transition: all .3s ease-in-out;
+
+      @media (max-width: $md3+px){
+         padding: 0 15px;
+         height: 44px;
+      }
+
+      @media (max-width: $md4+px){
+         border: 1px solid #fff;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            background: darken($blue, 13%);
+         }
+      }
+   }
+}
