@@ -4,12 +4,21 @@
 
    @media (max-height: 1080px){
       padding: max(21vh,150px) 0 60px 0;
+
+      @media (max-width: $md3+px){
+         padding: 100px 0px 40px 0px !important;
+      }
    }
 
    &__container {
       flex: 1 1 auto;
 
       @media (min-height: 1080px){
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+      }
+      @media (max-width: $md3+px){
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -22,7 +31,20 @@
       line-height: 111%;
       color: #fff;
       text-align: center;
-      margin: 0px 0px 135px 0px;
+      @include adaptiv-value('margin-bottom', 135, 25, 1);
+
+      @media (max-width: $md1+px){
+         font-size: 95px;
+      }
+      @media (max-width: 1400px){
+         font-size: 80px;
+      }
+      @media (max-width: $md2+px){
+         font-size: 60px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 44px;
+      }
 
       span{
          background: linear-gradient(90deg, #FE6783 1.9%, #FFBF84 97.1%);
@@ -35,6 +57,10 @@
    &__info {
       max-width: 694px;
       margin: 0 auto;
+
+      @media (max-width: $md2+px){
+         max-width: none;
+      }
    }
 
    &__descr {
@@ -43,7 +69,14 @@
       line-height: 150%;
       text-align: center;
       color: #fff;
-      margin: 0px 0px 50px 0px;
+      @include adaptiv-value('margin-bottom', 50, 25, 1);
+
+      @media (max-width: $md3+px){
+         font-size: 30px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 24px;
+      }
    }
 
    &__buttons {
@@ -51,29 +84,58 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 26px;
       margin: 0px 0px 20px 0px;
+
+      @media (max-width: $md4+px){
+         grid-template-columns: 1fr;
+         gap: 20px;
+      }
    }
 
    &__btn {
       height: 77px;
+
+      @media (max-width: $md3+px){
+         height: 70px;
+      }
+      @media (max-width: $md4+px){
+         height: 65px;
+         font-size: 18px;
+      }
+   }
+}
+
+.started{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: 400;
+   font-size: 25px;
+   color: $gray;
+
+   @media (max-width: $md3+px){
+      font-size: 20px;
+   }
+   @media (max-width: $md4+px){
+      font-size: 14px;
    }
 
-   &__started {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 400;
-      font-size: 25px;
-      color: $gray;
+   span{
+      font-weight: 700;
+      color: #fff;
+      margin: 0 9px;
 
-      span{
-         font-weight: 700;
-         color: #fff;
-         margin: 0 9px;
+      @media (max-width: $md4+px){
+         margin: 0 4px;
       }
    }
 
    &__dot {
       width: 29px;
       height: 29px;
-   }
+
+      @media (max-width: $md4+px){
+         width: 20px;
+         height: 20px;
+      }
+   }   
 }
