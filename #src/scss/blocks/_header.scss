@@ -3,25 +3,71 @@
    width: 100%;
    top: 0;
    left: 0;
-   min-height: 100px;
+   min-height: 10px;
+
+   &._scroll{
+      .header__wrapper{
+         background: #131313;
+         padding: 20px 0;
+         @media (max-width: $md2+px){
+            padding: 15px 0;
+         }
+         @media (max-width: $md3+px){
+            padding: 10px 0;
+         }
+      }
+
+      .header__list{
+         @media (max-width: $md2+px){
+            padding: 110px 0 0px 0;
+         }
+         @media (max-width: $md3+px){
+            padding: 90px 0 0px 0;
+         }
+         @media (max-width: $md4+px){
+            padding: 90px 0 20px 0;
+         }
+      }
+      
+   }
+
+   &._active{
+      .header__wrapper{
+         &:before{
+            opacity: 1;
+            visibility: visible;
+         }
+      }
+   }
 
    &__wrapper {
       position: fixed;
-      padding-top: 45px;
-      padding-bottom: 45px;
+      padding: 45px 0;
       width: 100%;
       left: 0;
       top: 0;
       z-index: 50;
       transition: all .3s ease-in-out;
 
+      &:before{
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: #131313;
+         opacity: 0;
+         visibility: hidden;
+         transition: all .3s ease-in-out;
+         z-index: 2;
+      }
+
       @media (max-width: $md2+px){
-         padding-top: 30px;
-         padding-bottom: 30px;
+         padding: 30px 0;
       }
       @media (max-width: $md3+px){
-         padding-top: 20px;
-         padding-bottom: 20px;
+         padding: 20px 0;
       }
    }
 
@@ -34,6 +80,8 @@
    &__logo {
       flex: 0 0 196px;
       height: auto;
+      position: relative;
+      z-index: 2;
 
       img{
          width: 100%;
@@ -61,7 +109,6 @@
          opacity: 0;
          visibility: hidden;
          transition: all .3s ease-in-out;
-         padding: 60px 0 20px 0;
          overflow: auto;
 
          &._active{
@@ -77,9 +124,18 @@
 
       @media (max-width: $md2+px){
          flex-direction: column;
+         padding: 140px 0 0px 0;
+      } 
+      
+      @media (max-width: $md3+px){
+         padding: 110px 0 0px 0;
       }
 
-      li{
+      @media (max-width: $md4+px){
+         padding: 110px 0 20px 0;
+      }
+
+      &>li{
          position: relative;
          display: flex;
          align-items: center;
@@ -124,7 +180,7 @@
       transition: all .3s ease-in-out;
 
       &.mouse &-arrow{
-         display: block;
+         display: inline-block;
       }
 
       &-arrow{
@@ -191,7 +247,7 @@
       position: absolute;
       top: 22px;
       left: 0;
-      padding: 10px 0px 0px 0px;
+      padding: 12px 0px 0px 0px;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
@@ -230,6 +286,7 @@
 
       li{
          @media (max-width: $md2+px){
+            text-align: center;
             &:not(:last-child){
               margin: 0px 0px 10px 0px;
             }
@@ -264,6 +321,8 @@
    &__auth {
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 2;
 
       @media (max-width: $md2+px){
          flex: 1 1 auto;
@@ -281,6 +340,7 @@
 
       @media (max-width: $md4+px){
          color: #fff;
+         margin: 0px 20px 0px 0px;
       }
 
       @media(any-hover: hover){

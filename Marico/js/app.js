@@ -1,7 +1,7 @@
 // @ @include('files/regular.js', {})
 document.addEventListener('DOMContentLoaded', () => {
-   const headerList = document.querySelector('.header__list');
-    if(isMobile.any()){
+   // header submenu
+   if(isMobile.any()){
       const arrows = document.querySelectorAll('.header__arrow');
       arrows.forEach(arrow => {
          const li = arrow.closest('li');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             subMenu.classList.toggle('open');
          });
       });
-    }else{
+   }else{
       const arrows = document.querySelectorAll('.header__arrow');
       arrows.forEach(arrow => {
          const link = arrow.previousElementSibling;
@@ -22,7 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
          li.classList.add('sub')
          link.classList.add('mouse');
       });
-    }
+   }
+
+   // header
+   const header = document.querySelector('.header');
+
+   const callback = function (entries, observer){
+       if(entries[0].isIntersecting){
+           header.classList.remove('_scroll');
+       }else{
+           header.classList.add('_scroll');
+       }
+   }
+
+   const headerObserver = new IntersectionObserver(callback);
+   headerObserver.observe(header);
 
 }); // end
 // @ @include('files/forms.js', {})
@@ -439,6 +453,7 @@ const burger = document.querySelector('.burger');
 const headerMenu = document.querySelector('[data-menu]');
 burger.addEventListener("click", () =>{
     headerMenu.classList.toggle("_active");
+    document.querySelector('.header').classList.toggle("_active");
     burger.classList.toggle("_active");
     document.body.classList.toggle("_lock");
 });;

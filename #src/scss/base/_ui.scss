@@ -48,3 +48,37 @@
 }
 
 // main
+
+.btn {
+   background: $blue;
+   border-radius: 10px;
+	border: 1px solid $blue;
+	padding: 23px 0;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 20px;
+	transition: all .3s ease-in-out;
+
+	@media(any-hover: hover){
+		&:hover{
+			background: darken($blue, 13%);
+			border-color: darken($blue, 13%);
+		}
+	}
+
+   &_stroke {
+		background: transparent;
+		border-color: $gray;
+		color: $gray;
+
+		@media(any-hover: hover){
+         &:hover{
+            background: transparent;
+            border-color: transparent;
+         }
+      }
+   }
+}
