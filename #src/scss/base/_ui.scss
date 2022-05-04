@@ -82,3 +82,11 @@
       }
    }
 }
+
+.title {
+	font-weight: 600;
+	@include adaptiv-value('font-size', 75, 28, 1);
+	line-height: 149%;
+	color: #fff;
+	text-align: center;
+}
