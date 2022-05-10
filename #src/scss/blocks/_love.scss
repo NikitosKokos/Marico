@@ -1,5 +1,9 @@
 .love {
-   padding: 60px 0 160px 0;
+   padding: 60px 0 0 0;
+   @media (max-width: $md3+px){
+      padding: 4  0px 0 0 0;
+   }
+   @include adaptiv-value('margin-bottom', 160, 80, 1);
    &__container {
    }
 

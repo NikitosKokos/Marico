@@ -48,12 +48,11 @@
 }
 
 // main
-
 .btn {
    background: $blue;
    border-radius: 10px;
 	border: 1px solid $blue;
-	padding: 23px 0;
+	padding: 0px 23px;
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -81,6 +80,20 @@
          }
       }
    }
+
+	&_push{
+		background: #0E0E0E;
+		border-color: $gray;
+		color: $gray;
+
+		@media(any-hover: hover){
+         &:hover{
+				background: #0E0E0E;
+            color: lighten($gray, 11%);
+            border-color: lighten($gray, 13%);
+         }
+      }
+	}
 }
 
 .title {
@@ -89,4 +102,53 @@
 	line-height: 149%;
 	color: #fff;
 	text-align: center;
+}
+
+
+.heading {
+	@include adaptiv-value('margin-bottom', 180, 80, 1);
+
+	&__container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__step {
+		font-weight: 600;
+		@include adaptiv-value('font-size', 25, 20, 1);
+		line-height: 152%;
+		color: $blue;
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		font-weight: 400;
+		font-size: 30px;
+		@include adaptiv-value('font-size', 30, 16, 1);
+		line-height: 150%;
+		color: $gray;
+		margin: 0px 0px 34px 0px;
+
+		@media (max-width: $md3+px){
+			margin: 0px 0px 20px 0px;
+			br{
+				display: none;
+			}
+		}
+	}
+
+	&__btn {
+		padding: 0 38px;
+		height: 77px;
+
+		@media (max-width: $md3+px){
+			font-size: 18px;
+			height: 65px;
+			padding: 0 30px;
+		}
+	}
 }
