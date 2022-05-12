@@ -353,6 +353,7 @@ h6 {
   font-size: 25px;
   line-height: 152%;
   color: #306EF7;
+  text-transform: uppercase;
 }
 
 .heading__descr {
@@ -361,12 +362,12 @@ h6 {
   font-size: 30px;
   line-height: 150%;
   color: #707070;
-  margin: 0px 0px 34px 0px;
 }
 
 .heading__btn {
   padding: 0 38px;
   height: 77px;
+  margin: 34px 0px 0px 0px;
 }
 
 .header {
@@ -801,7 +802,15 @@ h6 {
 }
 
 .shouldDo {
-  margin: 0px 0px 190px 0px;
+  margin-bottom: 190px;
+}
+
+.shouldDo_create .shouldDo__title {
+  max-width: 697px;
+}
+
+.shouldDo_create .shouldDo__list {
+  max-width: 727px;
 }
 
 .shouldDo__content {
@@ -901,6 +910,82 @@ h6 {
   width: 100%;
 }
 
+.shareLink {
+  margin-bottom: 190px;
+}
+
+.shareLink__container {
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.shareLink__body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 666px;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.shareLink__item {
+  background: #0D0D0D;
+  padding: 33px 45px;
+}
+
+.shareLink__item_phone {
+  position: relative;
+}
+
+.shareLink__item_phone:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 92%;
+  height: 50%;
+  background: url("../img/mobile.png") bottom right/contain no-repeat;
+}
+
+.shareLink__item_phone .shareLink__caption {
+  margin: 0px 0px 24px 0px;
+}
+
+.shareLink__caption {
+  color: #0FC65C;
+  font-size: 30px;
+  line-height: 150%;
+  margin: 0px 0px 96px 0px;
+}
+
+.shareLink__title {
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 120%;
+  color: #919191;
+}
+
+.shareLink__title span {
+  color: #FFFFFF;
+}
+
+.shareLink__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.shareLink__btn {
+  height: 74px;
+  padding: 0 80px;
+}
+
 ._container {
   max-width: 1660px;
   margin: 0 auto;
@@ -978,6 +1063,20 @@ body._lock {
   }
 }
 
+@media (max-width: 1762px) {
+  .shareLink__container {
+    max-width: 1350px;
+  }
+
+  .shareLink__body {
+    grid-template-rows: 600px;
+  }
+
+  .shareLink__title {
+    font-size: 70px;
+  }
+}
+
 @media (max-width: 1672px) {
   .hero__title {
     font-size: 95px;
@@ -1032,6 +1131,18 @@ body._lock {
   .love__title {
     margin-bottom: calc(20px + 44 * ((100vw - 320px) / 1340));
   }
+
+  .shouldDo {
+    margin-bottom: calc(60px + 130 * ((100vw - 320px) / 1340));
+  }
+
+  .shareLink {
+    margin-bottom: calc(60px + 130 * ((100vw - 320px) / 1340));
+  }
+
+  .shareLink__body {
+    margin-bottom: calc(30px + 20 * ((100vw - 320px) / 1340));
+  }
 }
 
 @media (max-width: 1400px) {
@@ -1081,7 +1192,33 @@ body._lock {
   }
 
   .shouldDo__body {
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 25px 0px;
+  }
+
+  .shareLink__container {
+    max-width: 970px;
+  }
+
+  .shareLink__body {
+    grid-template-rows: 500px;
+  }
+
+  .shareLink__item {
+    padding: 30px;
+  }
+
+  .shareLink__caption {
+    font-size: 24px;
+    margin: 0px 0px 60px 0px;
+  }
+
+  .shareLink__title {
+    font-size: 50px;
+  }
+
+  .shareLink__btn {
+    height: 68px;
+    padding: 0 70px;
   }
 
   ._container {
@@ -1338,21 +1475,35 @@ body._lock {
     font-size: 16px;
   }
 
+  .shareLink__container {
+    max-width: 750px;
+  }
+
+  .shareLink__body {
+    grid-template-rows: repeat(2, 550px);
+    grid-template-columns: 1fr;
+  }
+
+  .shareLink__caption {
+    margin: 0px 0px 80px 0px;
+  }
+
+  .shareLink__title {
+    font-size: 60px;
+  }
+
   ._container {
     max-width: 750px;
   }
 }
 
 @media (max-width: 767.98px) {
-  .heading__descr {
-    margin: 0px 0px 20px 0px;
-  }
-
   .heading__descr br {
     display: none;
   }
 
   .heading__btn {
+    margin: 20px 0px 0px 0px;
     font-size: 18px;
     height: 65px;
     padding: 0 30px;
@@ -1484,6 +1635,22 @@ body._lock {
     margin: 0px 0px 30px 0px;
   }
 
+  .shareLink__container {
+    max-width: none;
+  }
+
+  .shareLink__body {
+    grid-template-rows: repeat(2, 500px);
+  }
+
+  .shareLink__caption {
+    margin: 0px 0px 60px 0px;
+  }
+
+  .shareLink__title {
+    font-size: 50px;
+  }
+
   ._container {
     max-width: none;
   }
@@ -1570,6 +1737,22 @@ body._lock {
   .shouldDo__btn:first-child {
     margin: 0px 0px 20px 0px;
   }
+
+  .shareLink__body {
+    grid-template-rows: repeat(2, 400px);
+  }
+
+  .shareLink__item {
+    padding: 20px 15px;
+  }
+
+  .shareLink__title {
+    font-size: 44px;
+  }
+
+  .shareLink__btn {
+    height: 65px;
+  }
 }
 
 @media (any-hover: hover) {
@@ -1638,3 +1821,5 @@ body._lock {
             justify-content: center;
   }
 }
+
+.webp .shareLink__item_phone:before{ background: url(../img/mobile.webp) bottom right/contain no-repeat; }
