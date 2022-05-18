@@ -1,0 +1,19 @@
+.audience {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 15.6% 0 15% 0;
+   background: url('../img/audience.png') center / cover no-repeat;
+
+   @media (max-width: $md3+px){
+      padding: 25% 0;
+   }
+   &__title {
+      font-weight: 600;
+      @include adaptiv-value('font-size', 70, 20, 1);
+      line-height: 150%;
+      text-align: center;
+      max-width: 1256px;
+      padding: 0 10px;
+   }
+}

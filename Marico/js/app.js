@@ -38,6 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
    const headerObserver = new IntersectionObserver(callback);
    headerObserver.observe(header);
 
+   // cookies
+   const cookies = document.querySelector('.cookies');
+   const cookieBtn = document.querySelector('.cookies__btn');
+
+   if(cookieBtn){
+      cookieBtn.addEventListener('click', () => {
+         cookies.classList.add('_hide');
+      }); 
+   }
+
+
 }); // end
 // @ @include('files/forms.js', {})
 // поддержка webp

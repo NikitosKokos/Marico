@@ -1,0 +1,43 @@
+.cookies {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   padding: 20px 0;
+   background: #131313;
+   transition: all .2s ease-in-out;
+   z-index: 10;
+
+   &._hide{
+      opacity: 0;
+      visibility: hidden;
+   }
+
+   &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__title {
+      color: $gray;
+      @include adaptiv-value('font-size', 18, 14, 1);
+      line-height: 1.2;
+      padding: 0px 10px 0px 0px;
+
+      span{
+         color: #f7f7f7;
+         font-weight: 500;
+      }
+   }
+
+   &__btn {
+      padding: 0 30px;
+      height: 50px;
+      @media (max-width: $md4+px){
+         height: 44px;
+         padding: 0 22px;
+         font-size: 18px;
+      }
+   }
+}

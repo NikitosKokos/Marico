@@ -1,0 +1,27 @@
+.agree {
+   @include adaptiv-value('margin-bottom', 190, 60, 1);
+
+   @media (max-width: $md2+px){
+      display: none;
+   }
+   &__container {
+      margin: 0 auto;
+      max-width: 1825px;
+      @include adaptiv-value('padding-left', 47, 0, 1);
+      @include adaptiv-value('padding-right', 47, 0, 1);
+   }
+
+   &__title {
+      @include adaptiv-value('margin-bottom', 50, 0, 1);
+   }
+
+   &__img {
+      width: 100%;
+      height: auto;
+
+      img{
+         width: 100%;
+         height: auto;
+      }
+   }
+}
