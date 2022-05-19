@@ -663,11 +663,12 @@ h6 {
   transition: all 0.3s ease-in-out;
 }
 
-.footer {
-  margin-bottom: 90px;
+.footer__content {
+  position: relative;
 }
 
-.footer__content {
+.footer__body {
+  padding-bottom: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -700,6 +701,9 @@ h6 {
   font-weight: 400;
   font-size: 27px;
   color: #707070;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .footer__list {
@@ -725,6 +729,53 @@ h6 {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.to-top {
+  display: block;
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background: #306EF7;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+.to-top svg {
+  width: 26px;
+  height: 14.62px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  fill: currentColor;
+}
+
+.to-top._active {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 .hero {
@@ -1343,8 +1394,8 @@ body._lock {
     font-size: calc(16px + 14 * ((100vw - 320px) / 1340));
   }
 
-  .footer {
-    margin-bottom: calc(60px + 30 * ((100vw - 320px) / 1340));
+  .to-top {
+    bottom: calc(20px + 20 * ((100vw - 320px) / 1340));
   }
 
   .hero__title {
@@ -1872,16 +1923,28 @@ body._lock {
     height: 44px;
   }
 
-  .footer__content {
+  .footer__body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 75px;
   }
 
   .footer__main {
     margin: 0px 0px 30px 0px;
     padding: 0;
+  }
+
+  .to-top {
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .to-top svg {
+    width: 22px;
+    height: 12px;
   }
 
   .hero__container {
@@ -2182,8 +2245,16 @@ body._lock {
     background: #094adc;
   }
 
+  .footer__mail:hover {
+    color: #306EF7;
+  }
+
   .footer__link:hover {
     color: #306EF7;
+  }
+
+  .to-top:hover {
+    background: #094adc;
   }
 }
 

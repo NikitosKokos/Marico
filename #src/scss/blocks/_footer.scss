@@ -1,13 +1,18 @@
 .footer {
-   @include adaptiv-value('margin-bottom', 90, 60, 1);
-
+   
    &__content {
+      position: relative;
+   }
+
+   &__body{
+      padding-bottom: 90px;
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       @media (max-width: $md3+px){
          flex-direction: column;
+         padding-bottom: 75px;
       }
    }
 
@@ -38,8 +43,15 @@
       font-weight: 400;
       font-size: 27px;
       color: $gray;
+      transition: all .3s ease-in-out;
       @media (max-width: $md2+px){
          font-size: 24px;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            color: $blue;
+         }
       }
    }
 
@@ -89,6 +101,57 @@
          &:hover{
             color: $blue;
          }
+      }
+   }
+}
+
+.to-top{
+   display: block;
+   position: absolute;
+   @include adaptiv-value('bottom',40,20, 1);
+   right: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 60px;
+   height: 60px;
+   border-radius: 4px;
+   cursor: pointer;
+   color: #fff;
+   background: $blue;
+   transition: all .3s ease-in-out;
+   z-index: 10;
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(-30px);
+
+   svg{
+      width: 26px;
+      height: 14.62px;
+      object-fit: contain;
+      fill: currentColor;
+   }
+
+   &._active{
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+   }
+
+   @media (max-width: $md3+px){
+      right: 10px;
+      width: 50px;
+      height: 50px;
+
+      svg{
+         width: 22px;
+         height: 12px;
+      }
+   }
+
+   @media(any-hover: hover){
+      &:hover{
+         background: darken($blue, 13%);
       }
    }
 }

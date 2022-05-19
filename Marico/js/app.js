@@ -48,6 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }); 
    }
 
+   // scroll to top
+
+   const toTopBtn = document.querySelector('.to-top');
+   if(toTopBtn){
+      const scroll = new SmoothScroll('.to-top', {
+         speed: 200
+      });
+      window.addEventListener('scroll', (e) => {
+         if(toTopBtn.getBoundingClientRect().bottom - document.documentElement.clientHeight <= 0){
+            toTopBtn.classList.add('_active');
+         }else{
+            toTopBtn.classList.remove('_active');
+         }
+      });      
+   }
 
 }); // end
 // @ @include('files/forms.js', {})
