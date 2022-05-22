@@ -1264,6 +1264,260 @@ h6 {
   padding-left: 111px;
 }
 
+.registration {
+  padding-top: 185px;
+}
+
+.registration__text {
+  text-align: center;
+}
+
+.registration__body {
+  max-width: 1118px;
+  display: grid;
+  grid-template-columns: repeat(2, 0.435fr);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 80px;
+  margin: 0 auto;
+}
+
+.registration__input {
+  position: relative;
+  height: 52px;
+}
+
+.registration__input input {
+  width: 100%;
+  height: 100%;
+  font-size: 23px;
+  color: #fff;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  padding: 0px 60px 15px 0px;
+}
+
+.registration__input input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.registration__input input::-moz-placeholder {
+  color: #fff;
+}
+
+.registration__input input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.registration__input input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.registration__input input::placeholder {
+  color: #fff;
+}
+
+.registration__input input:focus {
+  border-color: #fff;
+}
+
+.registration__icon {
+  fill: #808080;
+  stroke: #808080;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.registration__icon_user {
+  width: 25px;
+  height: 30px;
+}
+
+.registration__icon_email {
+  width: 30px;
+  height: 30px;
+}
+
+.registration__icon_password {
+  width: 33px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.registration__icon_password.text rect {
+  -webkit-animation: show 0.3s linear forwards;
+          animation: show 0.3s linear forwards;
+}
+
+.registration__icon_password.password rect {
+  -webkit-animation: hide 0.3s linear forwards;
+          animation: hide 0.3s linear forwards;
+}
+
+@-webkit-keyframes show {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 35px;
+  }
+}
+
+@keyframes show {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 35px;
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    width: 35px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes hide {
+  0% {
+    width: 35px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+.registration__icon._active {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.registration__btn {
+  font-size: 26px;
+  height: 85px;
+}
+
+.registration__with {
+  margin: 0px 0px 70px 0px;
+}
+
+.registration__caption {
+  margin: 70px 0px 0px 0px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.registration__caption a {
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.registration__caption a:before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-registration {
+  margin: 0px 0px 75px 0px;
+}
+
+.text-registration_with {
+  margin: 0px 0px 45px 0px;
+}
+
+.text-registration_with .text-registration__title {
+  font-size: 54px;
+  line-height: 140%;
+}
+
+.text-registration__title {
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 149%;
+}
+
+.text-registration__descr {
+  font-size: 24px;
+  line-height: 150%;
+}
+
+.extra-registration {
+  max-width: 1520px;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-template-columns: repeat(3, 29.83%);
+  margin: 0 auto;
+}
+
+.extra-registration__item {
+  width: 100%;
+}
+
+.extra-registration__btn {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 21px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 75px;
+  width: 100%;
+  padding: 0 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.extra-registration__btn img {
+  width: 33px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0px 20px 0px 0px;
+}
+
 ._container {
   max-width: 1660px;
   margin: 0 auto;
@@ -1484,6 +1738,10 @@ body._lock {
 
   .getStart__btn {
     padding-left: calc(50px + 61 * ((100vw - 320px) / 1340));
+  }
+
+  .registration {
+    padding-top: calc(120px + 65 * ((100vw - 320px) / 1340));
   }
 }
 
@@ -2255,6 +2513,19 @@ body._lock {
 
   .to-top:hover {
     background: #094adc;
+  }
+
+  .registration__caption a:hover {
+    color: #306EF7;
+  }
+
+  .registration__caption a:hover:before {
+    width: 100%;
+    background: #306EF7;
+  }
+
+  .extra-registration__btn:hover {
+    border-color: transparent;
   }
 }
 

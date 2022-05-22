@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 
    // scroll to top
-
    const toTopBtn = document.querySelector('.to-top');
    if(toTopBtn){
       const scroll = new SmoothScroll('.to-top', {
@@ -61,6 +60,75 @@ document.addEventListener('DOMContentLoaded', () => {
             toTopBtn.classList.remove('_active');
          }
       });      
+   }
+   // form registration
+   const formInputs = document.querySelectorAll('.registration__input input');
+   if(formInputs.length > 0){
+      function changePasswordType(parent){
+         let isPasswordActive = true;
+         const icon = parent.querySelector('.registration__icon');
+         const input = parent.querySelector('.registration__input input');
+         icon.addEventListener('click', () => {
+            if(isPasswordActive){
+               input.type = 'text';
+               icon.classList.remove('password');
+               icon.classList.add('text');
+               isPasswordActive = false;
+            }else{
+               input.type = 'password';
+               icon.classList.remove('text');
+               icon.classList.add('password');
+               isPasswordActive = true;
+            }
+            
+         });
+      }
+
+      formInputs.forEach(input => {
+         const parent = input.parentNode
+         input.addEventListener('focus', () => {
+            const icon = parent.querySelector('.registration__icon');
+            if(icon){
+               icon.classList.add('_active');
+            }
+         });
+         input.addEventListener('blur', () => {
+            const icon = parent.querySelector('.registration__icon');
+            if(icon){
+               icon.classList.remove('_active');
+            }
+         });
+         switch(input.type){
+            case 'text':
+               parent.insertAdjacentHTML('beforeend', 
+               `
+               <svg class="registration__icon registration__icon_user">
+                  <use xlink:href='img/sprite.svg#user'></use>
+               </svg>
+               `);
+               break;
+            case 'email':
+               parent.insertAdjacentHTML('beforeend', 
+               `
+               <svg class="registration__icon registration__icon_email">
+                  <use xlink:href='img/sprite.svg#email'></use>
+               </svg>
+               `);
+               break;
+            case 'password':
+               parent.insertAdjacentHTML('beforeend', 
+               `
+               <svg width="34" height="29" viewBox="0 0 34 29" class="registration__icon registration__icon_password">
+                  <use xlink:href='img/sprite.svg#password'></use>
+                  <rect y="27.8" width="0" height="2.6694" rx="1.3347" transform="rotate(-46.0706 0 21.8787)"/>
+               </svg>
+               `);
+               changePasswordType(parent);
+               break;
+            default:
+               break;
+         }
+      });   
    }
 
 }); // end

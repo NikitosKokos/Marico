@@ -1,0 +1,212 @@
+.registration {
+   @include adaptiv-value('padding-top', 185, 120, 1);
+
+   &__container {
+   }
+
+   &__form {
+   }
+
+   &__text {
+      text-align: center;
+   }
+
+   &__body {
+      max-width: 1118px;
+      display: grid;
+      grid-template-columns: repeat(2,0.435fr);
+      justify-content: space-between;
+      align-items: center;
+      row-gap: 80px;
+      margin: 0 auto;
+   }
+
+   &__input {
+      position: relative;
+      height: 52px;
+      input{
+         width: 100%;
+         height: 100%;
+         font-size: 23px;
+         color: #fff;
+         background: transparent;
+         border-bottom: 1px solid rgba(#fff, 0.35);
+         transition: all .3s ease-in-out;
+         padding: 0px 60px 15px 0px;
+
+         &::placeholder{
+            color: #fff;
+         }
+
+         &:focus{
+            border-color: #fff;
+         }
+      }
+   }
+
+   &__icon{
+      fill: #808080;
+      stroke: #808080;
+      position: absolute;
+      top: 0;
+      right: 15px;
+      transition: all .3s ease-in-out;
+
+      &_user{
+         width: 25px;
+         height: 30px;
+      }
+
+      &_email{
+         width: 30px;
+         height: 30px;
+      }
+
+      &_password{
+         width: 33px;
+         height: 25px;
+         cursor: pointer;
+
+         &.text{
+            rect{
+               animation: show .3s linear forwards;
+            }
+         }
+         &.password{
+            rect{
+               animation: hide .3s linear forwards;
+            }
+         }
+
+         @keyframes show {
+            0%{
+               width: 0;
+            }
+            100%{
+               width: 35px;
+            }
+         }
+         @keyframes hide {
+            0%{
+               width: 35px;
+            }
+            100%{
+               width: 0;
+            }
+         }
+      }
+
+      &._active{
+         fill: #fff;
+         stroke: #fff;
+      }
+   }
+
+   &__btn {
+      font-size: 26px;
+      height: 85px;
+   }
+
+   &__with {
+      margin: 0px 0px 70px 0px;
+   }
+
+   &__extra {
+   }
+
+   &__caption {
+      margin: 70px 0px 0px 0px;
+      text-align: center;
+      font-size: 16px;
+
+      a{
+         display: inline-block;
+         color: #fff;
+         position: relative;
+         transition: all .3s ease-in-out;
+         &:before{
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #fff;
+            transition: all .3s ease-in-out;
+         }
+
+         @media(any-hover: hover){
+            &:hover{
+               color: $blue;
+               &:before{
+                  width: 100%;
+                  background: $blue;
+               }
+            }
+         }
+      }
+   }
+}
+
+.text-registration {
+   margin: 0px 0px 75px 0px;
+
+   &_with {
+      margin: 0px 0px 45px 0px;
+      .text-registration__title{
+         font-size: 54px;
+         line-height: 140%;
+      }
+   }
+
+   &__title {
+      font-weight: 600;
+      font-size: 75px;
+      line-height: 149%;
+   }
+
+   &__descr {
+      font-size: 24px;
+      line-height: 150%;
+   }
+}
+
+.extra-registration {
+   max-width: 1520px;
+   display: grid;
+   align-items: center;
+   justify-content: space-between;
+   grid-template-columns: repeat(3,29.83%);
+   margin: 0 auto;
+
+   &__item {
+      width: 100%;
+   }
+
+   &__btn {
+      border: 2px solid #fff;
+      border-radius: 10px;
+      font-size: 21px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 75px;
+      width: 100%;
+      padding: 0 10px;
+      transition: all .3s ease-in-out;
+
+      img{
+         width: 33px;
+         height: auto;
+         object-fit: contain;
+         margin: 0px 20px 0px 0px;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            border-color: transparent;
+         }
+      }
+   }
+}

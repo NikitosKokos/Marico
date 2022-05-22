@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('_head.html',{
+	"title":"Marico | Sign up"
+	})
+	<body id="page">
+		<div class="wrapper">
+			@@include('_header.html',{})
+			<main class="page">
+            <section class="registration">
+               <div class='registration__container _container'>
+                  <form action="#" class="registration__form">
+                     <div class="registration__text text-registration">
+                        <h1 class="text-registration__title">Sign up</h1>
+                        <p class="text-registration__descr">Fill all field for create an account.</p>
+                     </div>
+                     <div class="registration__body">
+                        <div class="registration__input">
+                           <input type="text" placeholder="Username">
+                        </div>
+                        <div class="registration__input">
+                           <input type="email" placeholder="Email Address">
+                        </div>
+                        <div class="registration__input">
+                           <input type="password" placeholder="Password">
+                        </div>
+                        <button class="registration__btn btn">Sign Up</button>
+                     </div>
+                  </form>
+                  <div class="registration__with">
+                     <div class="registration__text text-registration text-registration_with">
+                        <h2 class="text-registration__title">Or</h2>
+                        <p class="text-registration__descr">Sign up with...</p>
+                     </div>
+                     <ul class="registration__extra extra-registration">
+                        <li class="extra-registration__item">
+                           <button class="extra-registration__btn">
+                              <img src="./img/extra-registration/google.svg" alt="Google">
+                              Sign up with Google
+                           </button>
+                        </li>
+                        <li class="extra-registration__item">
+                           <button class="extra-registration__btn">
+                              <img src="./img/extra-registration/apple.svg" alt="Apple">
+                              Sign up with Apple
+                           </button>
+                        </li>
+                        <li class="extra-registration__item">
+                           <button class="extra-registration__btn">
+                              <img src="./img/extra-registration/facebook.svg" alt="Facebook">
+                              Sign up with Facebook
+                           </button>
+                        </li>
+                     </ul>
+                     <div class="registration__caption">
+                        Already have an account? Please <a href="#">Log in.</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+			</main>
+		</div>
+		<!-- @@include('_popup.html',{}) -->
+		@@include('_js.html',{})
+	</body>
+</html>
