@@ -1268,6 +1268,10 @@ h6 {
   padding-top: 185px;
 }
 
+.registration__form {
+  margin-bottom: 65px;
+}
+
 .registration__text {
   text-align: center;
 }
@@ -1282,8 +1286,12 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 80px;
+  row-gap: 60px;
   margin: 0 auto;
+}
+
+.registration__big > * {
+  width: 100%;
 }
 
 .registration__input {
@@ -1416,13 +1424,14 @@ h6 {
 }
 
 .registration__with {
-  margin: 0px 0px 70px 0px;
+  margin-bottom: 70px;
 }
 
 .registration__caption {
-  margin: 70px 0px 0px 0px;
+  margin-top: 70px;
   text-align: center;
   font-size: 16px;
+  line-height: 1.2;
 }
 
 .registration__caption a {
@@ -1462,13 +1471,13 @@ h6 {
 
 .text-registration__title {
   font-weight: 600;
-  font-size: 75px;
   line-height: 149%;
+  font-size: 75px;
 }
 
 .text-registration__descr {
-  font-size: 24px;
   line-height: 150%;
+  font-size: 24px;
 }
 
 .extra-registration {
@@ -1547,6 +1556,25 @@ h6 {
 
 body._lock {
   overflow: hidden;
+}
+
+@media (min-width: 767.98px) {
+  .registration__big {
+    grid-column: 2 span;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .registration__big > * {
+    width: 43.5%;
+  }
 }
 
 @media (min-width: 991.98px) {
@@ -1743,6 +1771,30 @@ body._lock {
   .registration {
     padding-top: calc(120px + 65 * ((100vw - 320px) / 1340));
   }
+
+  .registration__form {
+    margin-bottom: calc(50px + 15 * ((100vw - 320px) / 1340));
+  }
+
+  .registration__with {
+    margin-bottom: calc(40px + 30 * ((100vw - 320px) / 1340));
+  }
+
+  .registration__caption {
+    margin-top: calc(50px + 20 * ((100vw - 320px) / 1340));
+  }
+
+  .text-registration_with .text-registration__title {
+    font-size: calc(40px + 14 * ((100vw - 320px) / 1340));
+  }
+
+  .text-registration__title {
+    font-size: calc(60px + 15 * ((100vw - 320px) / 1340));
+  }
+
+  .text-registration__descr {
+    font-size: calc(20px + 4 * ((100vw - 320px) / 1340));
+  }
 }
 
 @media (max-width: 1400px) {
@@ -1823,6 +1875,23 @@ body._lock {
   .shareLink__btn {
     height: 68px;
     padding: 0 70px;
+  }
+
+  .registration__body {
+    grid-template-columns: repeat(2, 0.46fr);
+  }
+
+  .extra-registration {
+    grid-template-columns: repeat(3, 32%);
+  }
+
+  .extra-registration__btn {
+    font-size: 18px;
+  }
+
+  .extra-registration__btn img {
+    width: 25px;
+    margin: 0px 10px 0px 0px;
   }
 
   ._container {
@@ -2129,6 +2198,19 @@ body._lock {
     display: none;
   }
 
+  .registration__body {
+    grid-template-columns: repeat(2, 0.48fr);
+  }
+
+  .extra-registration__btn {
+    font-size: 16px;
+  }
+
+  .extra-registration__btn img {
+    width: 20px;
+    margin: 0px 8px 0px 0px;
+  }
+
   ._container {
     max-width: 750px;
   }
@@ -2320,6 +2402,27 @@ body._lock {
     padding: 25% 0;
   }
 
+  .registration__body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .extra-registration {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .extra-registration__btn {
+    font-size: 21px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .extra-registration__btn img {
+    width: 33px;
+    margin: 0px 20px 0px 0px;
+  }
+
   ._container {
     max-width: none;
   }
@@ -2455,6 +2558,43 @@ body._lock {
 
   .getStart__btn {
     width: 100%;
+  }
+
+  .registration__input input {
+    font-size: 21px;
+  }
+
+  .registration__btn {
+    font-size: 21px;
+    height: 70px;
+  }
+
+  .text-registration {
+    margin: 0px 0px 60px 0px;
+  }
+
+  .text-registration_with {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .extra-registration {
+    gap: 15px;
+  }
+
+  .extra-registration__btn {
+    max-width: none;
+    font-size: 18px;
+  }
+
+  .extra-registration__btn img {
+    width: 25px;
+    margin: 0px 10px 0px 0px;
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 991.98px) {
+  .registration__big > * {
+    width: 48%;
   }
 }
 
