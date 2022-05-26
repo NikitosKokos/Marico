@@ -1,0 +1,291 @@
+.pricing {
+   @include adaptiv-value('padding-top', 230, 120, 1);
+
+   &__container {
+   }
+
+   &__title {
+      font-weight: 600;
+      @include adaptiv-value('font-size', 75, 30, 1);
+      line-height: 140%;
+      text-align: center;
+      @include adaptiv-value('margin-bottom', 120, 40, 1);
+   }
+
+   &__body {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 75px;
+
+      @media (max-width: $md1+px){
+         gap: 40px;
+      }
+      @media (max-width: 1400px){
+         grid-template-columns: repeat(2,1fr);
+      }
+      @media (max-width: $md2+px){
+         gap: 20px;
+      }
+      @media (max-width: $md3+px){
+         grid-template-columns: 1fr;
+      }
+   }
+
+   &__item {
+   }
+}
+
+.item-pricing {
+   border: 1px solid $gray;
+   background: #131313;
+   border-radius: 20px;
+   padding: 38px 34px 35px;
+   display: flex;
+   flex-direction: column;
+
+   @media (max-width: $md2+px){
+      padding: 35px 30px 30px;
+   }
+   @media (max-width: $md4+px){
+      padding: 25px 20px 20px;
+   }
+
+   &__characteristics{
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__title {
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 133%;
+      @media (max-width: $md2+px){
+         font-size: 45px;
+      }
+   }
+
+   &__descr {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 140%;
+      color: #B4B1B1;
+      margin: 0px 0px 15px 0px;
+
+      @media (max-width: $md1+px){
+         font-size: 24px;
+      }
+      @media (max-width: $md2+px){
+         font-size: 20px;
+      }
+   }
+
+   &__price {
+      flex: 1 1 auto;
+      padding: 0px 0px 70px 0px;
+      @media (max-width: $md2+px){
+         padding: 0px 0px 40px 0px;
+      }
+      @media (max-width: $md4+px){
+         padding: 0px 0px 30px 0px;
+      }
+   }
+
+   &__count {
+      font-weight: 700;
+      font-size: 69px;
+      span{
+         font-weight: 400;
+         font-size: 26px;
+         color: #B4B1B1;
+         margin: 0px 0px 0px 5px;
+      }
+      @media (max-width: $md2+px){
+         font-size: 60px;
+         span{
+            font-size: 24px;
+         }
+      }
+      @media (max-width: $md4+px){
+         font-size: 50px;
+         span{
+            font-size: 20px;
+         }
+      }
+   }
+
+   &__subscribers {
+      font-weight: 700;
+      font-size: 27px;
+      line-height: 140%;
+      margin: 0px 0px 5px 0px;
+      @media (max-width: $md1+px){
+         font-size: 22px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 20px;
+      }
+   }
+
+   &__limit {
+      font-size: 28px;
+      line-height: 140%;
+      margin: 0px 0px 45px 0px;
+      @media (max-width: $md1+px){
+         font-size: 25px;
+      }
+      @media (max-width: $md2+px){
+         font-size: 22px;
+         margin: 0px 0px 30px 0px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 20px;
+         margin: 0px 0px 20px 0px;
+      }
+   }
+
+   &__more {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 140%;
+      color: #B4B1B1;
+      margin: 0px 0px 54px 0px;
+      @media (max-width: $md2+px){
+         margin: 0px 0px 30px 0px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 20px;
+         margin: 0px 0px 20px 0px;
+      }
+   }
+
+   &__caption {
+      font-weight: 600;
+      font-size: 27px;
+      line-height: 140%;
+      margin: 0px 0px 28px 0px;
+      @media (max-width: $md1+px){
+         font-size: 24px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 20px;
+         margin: 0px 0px 15px 0px;
+      }
+   }
+
+   &__benefits {
+      flex: 1 1 auto;
+      margin: 0px 0px 30px 0px;
+   }
+
+   &__benefit {
+      padding: 0px 0px 0px 35px;
+      position: relative;
+      font-size: 24px;
+      line-height: 150%;
+
+      &:before{
+         content: '';
+         width: 24.38px;
+         height: 17.91px;
+         background: url('../img/icons/check.svg') center / contain no-repeat;
+         position: absolute;
+         top: 8px;
+         left: 0;
+      }
+
+      &:not(:last-child){
+        margin: 0px 0px 24px 0px;
+      }
+
+      @media (max-width: $md2+px){
+         font-size: 22px;
+         padding: 0px 0px 0px 30px;
+
+         &:before{
+            width: 21px;
+            height: 15px;          
+         }
+
+         &:not(:last-child){
+            margin: 0px 0px 20px 0px;
+          }
+      }
+      @media (max-width: $md4+px){
+         font-size: 18px;
+         padding: 0px 0px 0px 23px;
+
+         &:before{
+            width: 16px;
+            height: 11px;        
+         }
+
+         &:not(:last-child){
+            margin: 0px 0px 10px 0px;
+          }
+      }
+   }
+
+   &__btn {
+      font-weight: 500;
+      font-size: 27px;
+      color: #fff;
+      height: 105px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+      border: 3.5px solid #4681E7;
+      border-radius: 20px;
+      transition: all .3s ease-in-out;
+
+      @media(any-hover: hover){
+         &:hover{
+            background: #4681E7;
+         }
+      }
+
+      @media (max-width: $md2+px){
+         font-size: 22px;
+         height: 90px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 18px;
+         height: 80px;
+      }
+   }
+
+   &__or {
+      font-size: 28px;
+      line-height: 140%;
+      color: #B4B1B1;
+      @media (max-width: $md2+px){
+         font-size: 22px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 18px;
+      }
+   }
+
+   &_accent {
+      background: #3C82F4;
+      border-color: #3C82F4;
+
+      .item-pricing__or, .item-pricing__more, .item-pricing__count span, .item-pricing__descr{
+         color: #fff;
+      }
+
+      .item-pricing__btn{
+         background: #fff;
+         color: #3C82F4;
+         border-color: #fff;
+
+         @media(any-hover: hover){
+            &:hover{
+               background: transparent;
+               color: #fff;
+            }
+         }
+      }
+   }
+}
