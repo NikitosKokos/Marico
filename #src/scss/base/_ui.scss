@@ -108,6 +108,14 @@
 .heading {
 	@include adaptiv-value('margin-bottom', 180, 80, 1);
 
+	&_team{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		@include adaptiv-value('margin-bottom', 60, 40, 1);
+	}
+
 	&__container{
 		display: flex;
 		flex-direction: column;

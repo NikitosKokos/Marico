@@ -1,0 +1,76 @@
+.mission {
+   @include adaptiv-value('padding-top', 225, 100, 1);
+   @include adaptiv-value('padding-bottom', 180, 80, 1);
+
+   &__container {
+   }
+
+   &__logo {
+      @include adaptiv-value('width', 326, 220, 1);
+      @include adaptiv-value('padding-bottom', 48, 20, 1);
+      height: auto;
+      margin: 0 auto;
+
+      img{
+         width: 100%;
+         height: auto;
+         object-fit: contain;
+      }
+   }
+
+   &__main {
+      max-width: 994px;
+      text-align: center;
+      margin: 0 auto;
+      @include adaptiv-value('padding-bottom', 185, 60, 1);
+   }
+
+   &__subtitle {
+      font-weight: 600;
+      @include adaptiv-value('font-size', 25, 20, 1);
+      line-height: 140%;
+      color: $blue;
+      text-transform: uppercase;
+   }
+
+   &__title {
+      font-weight: 600;
+      @include adaptiv-value('font-size', 75, 33, 1);
+      line-height: 130%;
+   }
+
+   &__descr {
+      @include adaptiv-value('font-size', 30, 18, 1);
+      line-height: 140%;
+   }
+
+   &__body {
+      max-width: 1252px;
+      margin: 0 auto;
+      padding: 0 0 55px 80px;
+      border-bottom: 1px solid #828282;
+      @include adaptiv-value('font-size', 16, 10, 1);
+
+      @media (max-width: $md2+px){
+         padding: 0 0 40px 0;
+      }
+      @media (max-width: $md4+px){
+         padding: 0px 0px 20px 0px;
+      }
+   }
+
+   &__text {
+      line-height: 140%;
+      p{
+         @include adaptiv-value('font-size', 28, 16, 1);
+         line-height: 140%;
+      }
+   }
+
+   &__author {
+      font-weight: 600;
+      @include adaptiv-value('font-size', 28, 18, 1);
+      line-height: 140%;
+      @include adaptiv-value('margin-top', 50, 30, 1);
+   }
+}

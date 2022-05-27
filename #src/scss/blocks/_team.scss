@@ -1,0 +1,109 @@
+.team {
+
+   &__container {
+   }
+
+   &__body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1058px;
+      margin: 0 auto;
+
+      @media (max-width: $md3+px){
+         flex-direction: column;
+      }
+   }
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      @media (max-width: $md3+px){
+         &:not(:last-child){
+           margin: 0px 0px 40px 0px;
+         }
+      }
+   }
+
+   &__img {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0px 0px 17px 0px;
+      img{
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+
+      @media (max-width: $md2+px){
+         width: 100px;
+         height: 100px;
+      }
+      @media (max-width: $md3+px){
+         width: 112px;
+         height: 112px;
+      }
+      @media (max-width: $md4+px){
+         width: 100px;
+         height: 100px;
+      }
+   }
+
+   &__name {
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 130%;
+      @media (max-width: $md2+px){
+         font-size: 30px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 35px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 30px;
+      }
+   }
+
+   &__position {
+      font-size: 19px;
+      line-height: 140%;
+      color: #7F7F7F;
+      margin: 0px 0px 20px 0px;
+      @media (max-width: $md2+px){
+         font-size: 18px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 19px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 18px;
+      }
+   }
+
+   &__twitter {
+      font-weight: 500;
+      font-size: 20px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      transition: all .3s ease-in-out;
+
+      svg{
+         width: 14.44px;
+         height: 15.71px;
+         fill: $blue;
+         margin: 0px 0px 0px 7px;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            color: $blue;
+         }
+      }
+   }
+}
